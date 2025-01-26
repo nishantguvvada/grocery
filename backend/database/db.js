@@ -6,5 +6,6 @@ export const Products = mongoose.model("Products", {
     quantity: Number,
     stars: Number,
     reviews: Number,
-    feature: String
+    feature: String,
+    url: String
 });

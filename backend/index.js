@@ -29,7 +29,8 @@ app.post("/create-product", async (req, res) => {
             quantity: req.body.quantity,
             stars: req.body.stars,
             reviews: req.body.reviews,
-            feature: req.body.feature
+            feature: req.body.feature,
+            url: req.body.url
         }
 
         const product = await Products.create(metadata);
