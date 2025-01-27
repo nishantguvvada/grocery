@@ -35,9 +35,10 @@ export const AddProduct = () => {
         }
         
     }
-    return (
+    return ( 
         <>
-            <form className="basis-1/3 h-full border-2 shadow-xl p-8 rounded-xl mx-auto">
+            <div className="w-full md:basis-2/5 h-full border-2 shadow-xl p-8 rounded-xl mx-auto">
+                <h1 className="mb-4 text-xl font-extrabold leading-none tracking-tight text-center text-gray-900 md:text-3xl lg:text-4xl">Add an item</h1>
                 <div className="mb-5">
                     <label className="block mb-2 text-sm font-medium text-gray-900">Item Name</label>
                     <input onChange={(e) => { setItem(currValue => ({...currValue, product_name: e.target.value})) }} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Samsung S24 Ultra" required />
@@ -82,7 +83,7 @@ export const AddProduct = () => {
                     
                 </div>
                 <button onClick={saveProduct} type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
-            </form>
+            </div>
         </>
     )
 }

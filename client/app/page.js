@@ -8,7 +8,7 @@ export default function Home() {
     <>
     <CartProvider>
       <ProductProvider>
-        <div className="w-full h-full flex flex-row justify-center items-start">
+        <div className="w-full h-full flex flex-col gap-4 md:flex-row justify-center items-center md:items-start">
           <AddProduct/>
           <Shopping/>
         </div>

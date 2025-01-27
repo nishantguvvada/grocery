@@ -3,7 +3,7 @@ import { Cart } from "./Cart"
 export const Products = ({ product }) => {
     return (
     <>
-        <div className="w-96">
+        <div className="grow">
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <div className="h-56 w-full">
                     <a href="#">
