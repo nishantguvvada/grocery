@@ -3,8 +3,8 @@ import { Cart } from "./Cart"
 export const Products = ({ product }) => {
     return (
     <>
-        <div className="grow">
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="w-fit md:grow">
+            <div className="w-full rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <div className="h-56 w-full">
                     <a href="#">
                         <img className="mx-auto h-full" src={`${product.url}`} alt="" />

@@ -15,6 +15,7 @@ export const AddProduct = () => {
 
     const saveProduct = async () => {
         if (item.product_name == null || item.product_name == "Sample Product") {
+            toast.error("Product name not provided");
             console.log("Error: No name input!");
             return
         } 
@@ -29,15 +30,17 @@ export const AddProduct = () => {
                 url: item.url
             });
             console.log("Response from POST: ", response);
+            toast.success('Item successfully added!')
 
         } catch(err) {
             console.log("Error: ", err);
+            toast.error("Something didn't work.")
         }
         
     }
     return ( 
         <>
-            <div className="w-full md:basis-2/5 h-full border-2 shadow-xl p-8 rounded-xl mx-auto">
+            <div className="w-full min-w-[30%] md:basis-2/5 h-full border-2 shadow-xl p-8 rounded-xl mx-auto">
                 <h1 className="mb-4 text-xl font-extrabold leading-none tracking-tight text-center text-gray-900 md:text-3xl lg:text-4xl">Add an item</h1>
                 <div className="mb-5">
                     <label className="block mb-2 text-sm font-medium text-gray-900">Item Name</label>
