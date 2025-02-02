@@ -2,11 +2,13 @@
 import { CartStateContext } from "grocery/utils/cart-context";
 import { useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 
 export const Checkout = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     const { state } = useContext(CartStateContext);
+    const router = useRouter();
 
     const initPayment = (data) => {
         const options = {
@@ -15,14 +17,14 @@ export const Checkout = () => {
             "name": "Grocery",
             "currency": "INR",
             "description": "Test Transaction",
-            "image": "https://ibb.co/ZR98pfjx",
+            "image": "https://i.postimg.cc/d3zFppMx/ngx.png",
             "prefill":
             {
                 "email": "nishant.guvvada@gmail.com",
                 "contact": +919900000000,
             },
             "order_id": data.id,
-            "callback_url": "http://localhost:3000/success",
+            "redirect": true,
             config: {
                 display: {
                     blocks: {
@@ -65,6 +67,7 @@ export const Checkout = () => {
             "handler": async (response) => {
                 try {
                     const { data } = await axios.post("http://localhost:3001/verify", response);
+                    router.push("http://localhost:3000/success");
                     console.log("Payment Success: ", data);
                 } catch(err) {
                     console.log(err);

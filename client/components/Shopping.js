@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from "react"
 import { Products } from "./Products"
 import { ProductContext } from "grocery/utils/product-context"
 import { CartStateContext } from "grocery/utils/cart-context"
-import Script from "next/script"
 import { Checkout } from "./Checkout"
+import Script from "next/script"
 
 export const Shopping = () => {
     const [isCheckout, setIsCheckout] = useState(false);
@@ -33,6 +33,7 @@ export const Shopping = () => {
         <Script
             id="razorpay-checkout-js"
             src="https://checkout.razorpay.com/v1/checkout.js"
+            strategy="beforeInteractive"
         />
             {isCheckout ? 
                 <div className="fixed w-2/4 inset-x-0 mx-auto top-[20%] bg-gray-50 border-2 rounded-xl shadow max-h-[60%] overflow-y-scroll">
