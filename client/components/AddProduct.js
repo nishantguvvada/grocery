@@ -20,7 +20,7 @@ export const AddProduct = () => {
             return
         } 
         try {
-            const response = await axios.post("http://localhost:3001/create-product", {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/create-product`, {
                 product_name: item.product_name,
                 product_price: item.product_price,
                 quantity: item.quantity,

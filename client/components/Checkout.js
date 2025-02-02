@@ -66,8 +66,8 @@ export const Checkout = () => {
             },
             "handler": async (response) => {
                 try {
-                    const { data } = await axios.post("http://localhost:3001/verify", response);
-                    router.push("http://localhost:3000/success");
+                    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/verify`, response);
+                    router.push("/success");
                     console.log("Payment Success: ", data);
                 } catch(err) {
                     console.log(err);
@@ -83,7 +83,7 @@ export const Checkout = () => {
 
     const completeCheckout = async () => {
         try {
-            const { data } = await axios.post("http://localhost:3001/orders", { amount: totalPrice });
+            const { data } = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/orders`, { amount: totalPrice });
             initPayment(data.data);
         } catch(err) {
             console.log(err);

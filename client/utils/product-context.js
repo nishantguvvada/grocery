@@ -12,7 +12,7 @@ export const ProductProvider = ({ children }) => {
     useEffect(() => {
         const productList = async () => {
             try {
-                const list = await axios.get("http://localhost:3001/products");
+                const list = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/products`);
                 toast.success('Items fetched successfully!')
                 setProducts(list.data.products);
             }

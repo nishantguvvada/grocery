@@ -22,7 +22,7 @@ const razorpayInstance = new Razorpay({
 
 app.get("/", (req, res) => {
     try {
-        res.json({message: "Working", url: process.env.MONGODB_URL});
+        res.json({message: "Working"});
     } catch(err) {
         res.json({error: err});
     }
